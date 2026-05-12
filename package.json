@@ -9,7 +9,6 @@
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@ant-design/icons-react": "^2.0.1",
     "@vitejs/plugin-react": "5.1.2",
     "react": "19.2.6",
     "react-dom": "19.2.6",
