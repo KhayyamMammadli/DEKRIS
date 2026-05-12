@@ -1,0 +1,6 @@
+export type Status = 'Yeni' | 'Yoxlanılacaq' | 'Qərar gözləyir' | 'Təsdiq gözləyir' | 'İcrada' | 'Tamamlandı' | 'İmtina';
+export type ModuleKey = 'documents' | 'rights' | 'registry' | 'cadastre' | 'apartments' | 'query' | 'analytics' | 'delivery';
+export interface User { name: string; role: string; email: string; }
+export interface DocumentItem { id:string; applicant:string; fin:string; phone:string; email:string; address:string; topic:string; status:Status; date:string; priority:string; currentStep:string; nextStep:string; responsible:string; folderNo:string; objectId:string; files:{name:string; type:string; size:string; date:string}[]; notes:string[]; }
+export interface Property { id:string; cadastralNo:string; address:string; owner:string; fin:string; status:string; area:number; buildingArea:number; floor:number; value:number; category:string; purpose:string; useForm:string; type:string; rights:{kind:string; holder:string; share:string; date:string; status:string}[]; documents:string[]; history:string[]; apartmentBuilding?: { buildingPermit:string; cooperative:string; members:number; decisions:number; shares:number; } }
+export interface Notification { id:string; text:string; read:boolean; date:string; }

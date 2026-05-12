@@ -1,0 +1,2 @@
+import type { Status } from '../../types';
+export function Badge({status}:{status:string}){ const s = status as Status; const map:Record<string,string>={Yeni:'green','Yoxlanılacaq':'blue','Qərar gözləyir':'purple','Təsdiq gözləyir':'orange','İcrada':'yellow','Tamamlandı':'green','İmtina':'red','Qeydiyyatda':'green','Yüklülük var':'orange','Aktiv':'green'}; return <span className={'badge '+(map[s]||'blue')}>{status}</span> }

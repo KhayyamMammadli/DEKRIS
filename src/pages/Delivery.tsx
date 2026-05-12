@@ -1,0 +1,4 @@
+import { Card } from '../components/ui/Card';
+import { useStore } from '../store/appStore';
+import { downloadText } from '../utils/helpers';
+export default function Delivery(){ const s=useStore(); return <><div className="page-title"><h2>Məlumatların verilməsi</h2><p>Reyestr və kadastr məlumatları, çıxarış, arayış və sənədlərin təqdim edilməsi</p></div><Card title="Veriləcək sənəd seçimi"><div className="module-grid compact">{['Çıxarış','Texniki pasport','Kadastr planı','Hüquq arayışı','Yüklülük arayışı','Tarixçə çıxarışı'].map(t=><button onClick={()=>downloadText(t+'.txt',t+' yaradıldı')}>{t}<span>Hazırla →</span></button>)}</div></Card><Card title="Əmlak obyektləri"><table><tbody>{s.properties.map(p=><tr><td>{p.cadastralNo}</td><td>{p.owner}</td><td>{p.address}</td><td><button onClick={()=>downloadText('cixaris-'+p.cadastralNo+'.txt',JSON.stringify(p,null,2))}>Çıxarış ver</button></td></tr>)}</tbody></table></Card></>}
